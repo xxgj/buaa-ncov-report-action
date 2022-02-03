@@ -29,23 +29,23 @@ def checkin() -> None:
                        'password': os.environ['PASSWORD']
                    },
                    headers=header)
-    logging.info('「登录结果」' + login.text)
+    logging.info('[login]' + login.text)
     if json.loads(login.text)['e'] != 0:
-        raise Exception('「登录失败」')
+        raise Exception('login error')
 
     # get info
     info = s.get(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/get-info',
                  headers=header)
     if json.loads(info.text)['e'] != 0:
-        raise Exception('「获取信息失败」')
+        raise Exception('get info error')
 
     # report
     report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                     data=json.loads(info.text)['d']['oldInfo'],
                     headers=header)
-    logging.info('「打卡结果」' + report.text)
+    logging.info('[report]' + report.text)
     if json.loads(report.text)['e'] != 0:
-        raise Exception('「打卡失败」')
+        raise Exception('report error')
 
 
 if __name__ == '__main__':
