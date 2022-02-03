@@ -8,22 +8,21 @@
 [![Contributors](https://img.shields.io/github/contributors/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/graphs/contributors)
 [![GitHub license](https://img.shields.io/github/license/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/blob/master/LICENSE)
 
-
 Minimal GitHub action for BUAA NCOV daily report.
 
 ## Quick Start
 
-There are only two steps needed for BUAA NCOV daily report: 
+**Only 2 steps needed:**
 
-### Step One: Creating a repository
+### Step 1: Creating a repository by `Use this template`
 
 > See [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) for details.
 
-### Step Two: Creating encrypted secrets
+### Step 2: Creating encrypted secrets
 
 > See [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for details.
 
-You should create two secrets for daily report:
+You should create two secrets:
 
 - `USERNAME`: your BUAA SSO username
 - `PASSWORD`: your BUAA SSO password

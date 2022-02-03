@@ -29,7 +29,7 @@ def checkin() -> None:
                        'password': os.environ['PASSWORD']
                    },
                    headers=header)
-    logging.info('「登录」' + login.text)
+    logging.info('「登录结果」' + login.text)
     if (result := json.loads(login.text)['m']) != '操作成功':
         raise Exception('「登录失败」' + result)
 
@@ -43,8 +43,8 @@ def checkin() -> None:
     report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                     data=json.loads(info.text)['d']['oldInfo'],
                     headers=header)
-    logging.info('「打卡」' + login.text)
-    if (result := json.loads(report.text)['m']) not in ('操作成功', '今天已经填报了'):
+    logging.info('「打卡结果」' + login.text)
+    if (result := json.loads(report.text)['m']) != '操作成功':
         raise Exception('「打卡失败」' + result)
 
 
