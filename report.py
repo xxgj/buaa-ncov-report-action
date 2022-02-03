@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 import requests
 
@@ -16,9 +15,6 @@ header = {
 
 
 def checkin() -> None:
-    # logging
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
-
     # request session
     s = requests.Session()
 
@@ -29,24 +25,21 @@ def checkin() -> None:
                        'password': os.environ['PASSWORD']
                    },
                    headers=header)
-    logging.info('[登录]' + login.text)
-    if json.loads(login.text)['m'] != '操作成功':
-        raise Exception('登录失败')
+    if (result := json.loads(login.text)['m']) != '操作成功':
+        raise Exception('「登录失败」' + result)
 
     # get info
     info = s.get(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/get-info',
-                     headers=header)
-    logging.info('[获取信息]' + info.text)
-    if json.loads(info.text)['m'] != '操作成功':
-        raise Exception('获取信息失败')
+                 headers=header)
+    if (result := json.loads(info.text)['m']) != '操作成功':
+        raise Exception('「获取信息失败」' + result)
 
     # report
     report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                     data=json.loads(info.text)['d']['oldInfo'],
                     headers=header)
-    logging.info('[打卡]' + report.text)
-    if json.loads(report.text)['m'] not in ('操作成功', '今天已经填报了'):
-        raise Exception('打卡失败')
+    if (result := json.loads(report.text)['m']) not in ('操作成功', '今天已经填报了'):
+        raise Exception('「打卡失败」' + result)
 
 
 if __name__ == '__main__':
