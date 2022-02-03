@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import requests
 
@@ -40,6 +41,8 @@ def checkin() -> None:
                     headers=header)
     if (result := json.loads(report.text)['m']) not in ('操作成功', '今天已经填报了'):
         raise Exception('「打卡失败」' + result)
+
+    logging.info('「打卡成功」')
 
 
 if __name__ == '__main__':
