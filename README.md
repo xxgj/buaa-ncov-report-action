@@ -14,11 +14,11 @@ Minimal GitHub action for BUAA NCOV daily report.
 
 **Only 2 steps needed:**
 
-### Step 1: Creating a repository by `Use this template`
+1. Creating a repository by `Use this template`
 
 > See [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) for details.
 
-### Step 2: Creating encrypted secrets
+2. Creating encrypted secrets
 
 > See [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for details.
 

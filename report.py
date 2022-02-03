@@ -30,22 +30,22 @@ def checkin() -> None:
                    },
                    headers=header)
     logging.info('「登录结果」' + login.text)
-    if (result := json.loads(login.text)['e']) != 0:
-        raise Exception('「登录失败」' + result)
+    if json.loads(login.text)['e'] != 0:
+        raise Exception('「登录失败」')
 
     # get info
     info = s.get(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/get-info',
                  headers=header)
-    if (result := json.loads(info.text)['e']) != 0:
-        raise Exception('「获取信息失败」' + result)
+    if json.loads(info.text)['e'] != 0:
+        raise Exception('「获取信息失败」')
 
     # report
     report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                     data=json.loads(info.text)['d']['oldInfo'],
                     headers=header)
     logging.info('「打卡结果」' + report.text)
-    if (result := json.loads(report.text)['e']) != 0:
-        raise Exception('「打卡失败」' + result)
+    if json.loads(report.text)['e'] != 0:
+        raise Exception('「打卡失败」')
 
 
 if __name__ == '__main__':
