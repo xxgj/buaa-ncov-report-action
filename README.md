@@ -25,7 +25,7 @@ Minimal GitHub action for BUAA NCOV daily report.
 
 ## How It Works
 
-### `report.py`
+### [report.py](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/report.py)
 
 `buaa-ncov-report-action` use [python-requests](https://docs.python-requests.org/en/latest/) to report.
 
@@ -58,7 +58,7 @@ report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                 headers=header)
 ```
 
-### `report.yml`
+### [report.yml](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/.github/workflows/report.yml)
 
 `buaa-ncov-report-action` use [GitHub Action](https://github.com/features/actions) to trigger `report.py`.
 
