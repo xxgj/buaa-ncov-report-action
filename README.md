@@ -76,9 +76,11 @@ on:
 
 In order to avoid network error, `buaa-ncov-report-action` triggers the workflow to run at 9:00 UTC and 9:30 UTC everyday to ensure report successfully.
 
+Since GitHub will send an email notification of workflow error messages to you when workflow fails, `buaa-ncov-report-action` do not implement another way for notification. 
+
 ## Known BUGs
 
-1. There is a slight difference between the real report data and yesterday's data.
+1. There is slight difference between the real report data and yesterday's data. However, it doesn't matter.
 
 ## License
 
