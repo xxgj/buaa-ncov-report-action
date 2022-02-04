@@ -1,12 +1,12 @@
 # buaa-ncov-report-action
 
-[![GitHub stars](https://img.shields.io/github/stars/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/network)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/kevinchen147/buaa-ncov-report-action)
-[![GitHub issues](https://img.shields.io/github/issues/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/issues)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/pulls)
-[![Contributors](https://img.shields.io/github/contributors/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/graphs/contributors)
-[![GitHub license](https://img.shields.io/github/license/kevinchen147/buaa-ncov-report-action)](https://github.com/kevinchen147/buaa-ncov-report-action/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/network)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/xxgj/buaa-ncov-report-action)
+[![GitHub issues](https://img.shields.io/github/issues/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/pulls)
+[![Contributors](https://img.shields.io/github/contributors/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/graphs/contributors)
+[![GitHub license](https://img.shields.io/github/license/xxgj/buaa-ncov-report-action)](https://github.com/xxgj/buaa-ncov-report-action/blob/master/LICENSE)
 
 Minimal GitHub action for BUAA NCOV daily report.
 
@@ -25,7 +25,7 @@ Minimal GitHub action for BUAA NCOV daily report.
 
 ## How It Works
 
-### [report.py](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/report.py)
+### [report.py](https://github.com/xxgj/buaa-ncov-report-action/blob/main/report.py)
 
 `buaa-ncov-report-action` uses [python-requests](https://docs.python-requests.org/en/latest/) to report.
 
@@ -58,7 +58,7 @@ report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
                 headers=header)
 ```
 
-### [report.yml](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/.github/workflows/report.yml)
+### [report.yml](https://github.com/xxgj/buaa-ncov-report-action/blob/main/.github/workflows/report.yml)
 
 `buaa-ncov-report-action` uses [GitHub Action](https://github.com/features/actions) to trigger `report.py`.
 
@@ -73,7 +73,11 @@ on:
 
 Since GitHub will send an email notification of workflow error messages to you when workflow fails, `buaa-ncov-report-action` does not implement another way for notification. 
 
+You can run workflow by yourself and view log at [here](https://github.com/xxgj/buaa-ncov-report-action/actions).
+
 ## Known BUGs
+
+> Feel free to open an issue if you have any questions.
 
 1. There is slight difference between the real report data and yesterday's data. However, it doesn't matter.
 
