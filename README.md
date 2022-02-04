@@ -27,7 +27,7 @@ Minimal GitHub action for BUAA NCOV daily report.
 
 ### [report.py](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/report.py)
 
-`buaa-ncov-report-action` use [python-requests](https://docs.python-requests.org/en/latest/) to report.
+`buaa-ncov-report-action` uses [python-requests](https://docs.python-requests.org/en/latest/) to report.
 
 1. Login
 
@@ -60,7 +60,7 @@ report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
 
 ### [report.yml](https://github.com/kevinchen147/buaa-ncov-report-action/blob/main/.github/workflows/report.yml)
 
-`buaa-ncov-report-action` use [GitHub Action](https://github.com/features/actions) to trigger `report.py`.
+`buaa-ncov-report-action` uses [GitHub Action](https://github.com/features/actions) to trigger `report.py`.
 
 `report.yml` schedules a workflow to run at specific UTC times(9:00 UTC) using POSIX cron syntax:
 
@@ -71,7 +71,7 @@ on:
   - cron: '0 9 * * *'
 ```
 
-Since GitHub will send an email notification of workflow error messages to you when workflow fails, `buaa-ncov-report-action` do not implement another way for notification. 
+Since GitHub will send an email notification of workflow error messages to you when workflow fails, `buaa-ncov-report-action` does not implement another way for notification. 
 
 ## Known BUGs
 
