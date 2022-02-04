@@ -62,19 +62,14 @@ report = s.post(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/save',
 
 `buaa-ncov-report-action` use [GitHub Action](https://github.com/features/actions) to trigger `report.py`.
 
-`report.yml` schedules a workflow to run at specific UTC times using POSIX cron syntax:
+`report.yml` schedules a workflow to run at specific UTC times(9:00 UTC) using POSIX cron syntax:
 
 ```yaml
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
   schedule:  
-  - cron: '0,30 9 * * *'
+  - cron: '0 9 * * *'
 ```
-
-In order to avoid network error, `buaa-ncov-report-action` triggers the workflow to run at 9:00 UTC and 9:30 UTC everyday to ensure report successfully.
 
 Since GitHub will send an email notification of workflow error messages to you when workflow fails, `buaa-ncov-report-action` do not implement another way for notification. 
 
