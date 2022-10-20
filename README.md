@@ -77,8 +77,8 @@ You can run workflow by yourself and view log at [here](https://github.com/xxgj/
 
 > Feel free to open an issue if you have any questions.
 
-1. There is slight difference between the real report data and yesterday's data. However, it doesn't matter.
-1. Scheduled workflows will be disabled automatically after 60 days of repository inactivity.
+1. There is slight difference between the real report data and yesterday's data. Nevertheless, it doesn't matter because I have used this for over 6 months and everything is fine.
+1. Scheduled workflows will be disabled automatically after 60 days of repository inactivity. See [here](https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow) for details. You will receive an email before the workflow is disabled and you can prevent it from being disabled on workflow page.
 
 ## License
 
