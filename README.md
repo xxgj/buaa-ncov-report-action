@@ -32,11 +32,11 @@ Minimal GitHub action for BUAA NCOV daily report.
     ```python
     # login
     login = s.post(url='https://app.buaa.edu.cn/uc/wap/login/check',
-                    data={
-                        'username': os.environ['USERNAME'],
-                        'password': os.environ['PASSWORD']
-                    },
-                    headers=header)
+                   data={
+                       'username': os.environ['USERNAME'],
+                       'password': os.environ['PASSWORD']
+                   },
+                   headers=header)
     ```
 
 1. Getting yesterday's info
@@ -44,7 +44,7 @@ Minimal GitHub action for BUAA NCOV daily report.
     ```python
     # get info
     info = s.get(url='https://app.buaa.edu.cn/buaaxsncov/wap/default/get-info',
-                    headers=header)
+                 headers=header)
     ```
 
 1. Report
